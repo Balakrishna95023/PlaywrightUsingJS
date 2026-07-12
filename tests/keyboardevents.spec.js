@@ -1,0 +1,20 @@
+const {test,expect}= require('@playwright/test')
+test.use({headless:false})
+test("Keywboard Events in playwright",async function({page})
+{
+    await page.goto("https://www.google.com/")
+    await page.locator("//textarea[@name='q']").type("Learn ", {delay:100})
+    await page.locator("//textarea[@name='q']").focus()
+    await page.keyboard.type("Playwright framework!")
+    await page.keyboard.press("ArrowLeft")
+    await page.keyboard.down("Shift")
+    for(let i=0;i<"framework".length;i++)
+    {
+        await page.keyboard.press("ArrowLeft")
+    }
+    await page.keyboard.up("Shift")
+    await page.keyboard.press("Backspace")
+    await page.waitForTimeout(3000)
+    await page.keyboard.press("Enter")
+    await page.waitForTimeout(3000)
+})
