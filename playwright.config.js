@@ -96,4 +96,5 @@ export default defineConfig({
   13. npx playwright codegen https://opensource-demo.orangehrmlive.com/web/index.php/auth/login -o ./tests/codegenBranded.spec.js --channel=chrome
   14. npx allure generate ./allure-results
   15. npx allure open ./allure-report
+  16. npm init playwright@latest
 */
