@@ -1,4 +1,7 @@
 const {test,expect} = require('@playwright/test')
+test.use({
+    headless:false
+})
 test("Select Values From Dropdown", async function({page})
 {
     await page.goto("https://freelance-learn-automation.vercel.app/signup")
